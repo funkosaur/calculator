@@ -1,5 +1,143 @@
 body {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 20% 80%;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 8rem 40rem;
+}
+
+.sign {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.calculator-frame {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  border: 1px solid black;
+  width: 35%;
+  height: 70%;
+  display: grid;
+  grid-template-columns: repeat(4, 24.25%);
+  grid-template-rows: repeat(7, 13.428%);
+  grid-gap: 1%;
+  padding: 1%;
+}
+
+.display-calculation {
+  grid-column: 1/5;
+  grid-row: 1/2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: "Press Start 2P", cursive;
+  overflow: hidden;
+}
+
+.entered-calculation {
+  grid-column: 1/5;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.number-button {
+  font-size: 25px;
+  border-radius: 0;
+  border: 0;
+}
+
+.expression-button {
+  font-size: 2rem;
+  border-radius: 0;
+  border: 0;
+}
+
+.title {
+  font-family: "Bungee Inline", cursive;
+  font-size: 5rem;
+  color: pink;
+}
+
+#btnZero {
+  grid-column: 2/3;
+  grid-row: 7/8;
+}
+
+#btnOne {
+  grid-column: 1/2;
+  grid-row: 6/7;
+}
+
+#btnTwo {
+  grid-column: 2/3;
+  grid-row: 6/7;
+}
+
+#btnThree {
+  grid-column: 3/4;
+  grid-row: 6/7;
+}
+
+#btnFour {
+  grid-column: 1/2;
+  grid-row: 5/6;
+}
+
+#btnFive {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+
+#btnSix {
+  grid-column: 3/4;
+  grid-row: 5/6;
+}
+
+#btnSeven {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+#btnEight {
+  grid-column: 2/3;
+  grid-row: 4/5;
+}
+
+#btnNine {
+  grid-column: 3/4;
+  grid-row: 4/5;
+}
+
+#equals {
+  grid-column: 3/5;
+  grid-row: 7/8;
+}
+
+#decimal {
+  grid-column: 1/2;
+  grid-row: 7/8;
+}
+
+#delete {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+#clear {
+  grid-column: 2/3;
+  grid-row: 3/4;
 }
