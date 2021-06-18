@@ -7,11 +7,10 @@ const equals = document.querySelector(".equals-button");
 
 
 numberButtons.forEach(element => { element.addEventListener("click", () => {
+
     if (enterCalc.textContent.length < 16) {
 
         enterCalc.textContent += element.value;
-
-        
 
         if(enterCalc.textContent.includes(".")) {
             decimal.value = "";
@@ -35,17 +34,24 @@ expressions.forEach(element => {element.addEventListener("click", () => {
 
     enterCalc.textContent = "";
     
+
+    if(displayCalc.textContent.includes("+")){
+        
+        operate(number1, number2, operator)
+    }
+    
 })});
 
-equals.addEventListener("click", ()=>{
-    
 
-    
+equals.addEventListener("click", ()=>{
+
     let number2 = enterCalc.textContent;
 
     displayCalc.textContent += ` ${number2}`
     
     operate(number1, number2, operator)
+
+    number1 = enterCalc.textContent;
 })
 
 
@@ -71,11 +77,11 @@ function operate(number1, number2, operator) {
     if(operator === "+") {
        enterCalc.textContent = addition(number1, number2);
     } else if(operator === "-") {
-        return subtraction(number1, number2)
+        enterCalc.textContent = subtraction(number1, number2);
     } else if(operator === "*") {
-        return multiply(number1, number2)
+        enterCalc.textContent = multiply(number1, number2);
     } else {
-        return division(number1, number2)
+        enterCalc.textContent = division(number1, number2);
     }
 
 }
