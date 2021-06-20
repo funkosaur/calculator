@@ -27,6 +27,20 @@ let operator
 
 expressions.forEach(element => {element.addEventListener("click", () => { 
 
+    if(displayCalc.textContent.includes(number1) && enterCalc.textContent.includes("")){
+        
+        let number2 = enterCalc.textContent;
+        
+
+        displayCalc.textContent += ` ${number2}`
+        
+    
+        operate(number1, number2, operator)
+        
+
+    }
+    
+    
     displayCalc.textContent = `${enterCalc.textContent} ${element.value}`;
 
     number1 = enterCalc.textContent;
@@ -35,10 +49,7 @@ expressions.forEach(element => {element.addEventListener("click", () => {
     enterCalc.textContent = "";
     
 
-    if(displayCalc.textContent.includes("+")){
-        
-        operate(number1, number2, operator)
-    }
+    
     
 })});
 
@@ -54,6 +65,7 @@ equals.addEventListener("click", ()=>{
     number1 = enterCalc.textContent;
 })
 
+//  povekje plusovi ako se stisnat reshi toa reshi ednakvo ako se stiska poeke pati
 
 
 function addition(number1, number2) {
@@ -85,4 +97,5 @@ function operate(number1, number2, operator) {
     }
 
 }
+
 
