@@ -4,6 +4,8 @@ const numberButtons = document.querySelectorAll(".number-button");
 const expressions = document.querySelectorAll(".expression-button");
 const decimal = document.querySelector("#decimal");
 const equals = document.querySelector(".equals-button");
+const del = document.querySelector(".delete-one");
+const clear = document.querySelector(".delete-all");
 
 
 numberButtons.forEach(element => { element.addEventListener("click", () => {
@@ -13,8 +15,8 @@ numberButtons.forEach(element => { element.addEventListener("click", () => {
         enterCalc.textContent += element.value;
 
         if(enterCalc.textContent.includes(".")) {
-            decimal.value = "";
-        }
+                decimal.value = "";
+        } else {decimal.value = "."}
 
     }
 
@@ -24,52 +26,73 @@ numberButtons.forEach(element => { element.addEventListener("click", () => {
 
 let number1
 let operator
+let number2
 
 expressions.forEach(element => {element.addEventListener("click", () => { 
 
-    if(displayCalc.textContent.includes(number1) && enterCalc.textContent.includes("")){
+    if(displayCalc.textContent.includes(number1) && enterCalc.textContent.length != 0){
         
-        let number2 = enterCalc.textContent;
+        number2 = enterCalc.textContent;
         
 
         displayCalc.textContent += ` ${number2}`
         
-    
+
         operate(number1, number2, operator)
         
 
     }
-    
-    
-    displayCalc.textContent = `${enterCalc.textContent} ${element.value}`;
 
-    number1 = enterCalc.textContent;
-    operator = element.value
 
-    enterCalc.textContent = "";
-    
+    if(enterCalc.textContent.length != 0) {
 
-    
+        displayCalc.textContent = `${enterCalc.textContent} ${element.value}`;
+
+        number1 = enterCalc.textContent;
+        operator = element.value
+
+        enterCalc.textContent = "";
+
+    }
     
 })});
 
 
 equals.addEventListener("click", ()=>{
 
-    let number2 = enterCalc.textContent;
+    
+
+    if(displayCalc.textContent.includes(number1) && enterCalc.textContent.length != 0){
+    number2 = enterCalc.textContent;
 
     displayCalc.textContent += ` ${number2}`
     
     operate(number1, number2, operator)
 
     number1 = enterCalc.textContent;
+    }
+});
+
+clear.addEventListener("click", () => { 
+    enterCalc.textContent = "";
+    displayCalc.textContent = "";
+    number2 = "";
+    operator = "";
 })
 
-//  povekje plusovi ako se stisnat reshi toa reshi ednakvo ako se stiska poeke pati
+del.addEventListener("click", () => {
+    
+        enterCalc.textContent.replace(1, "")
+    
+})
+
+
+
+//  backpsace reshi
 
 
 function addition(number1, number2) {
-    return parseInt(number1) + parseInt(number2);
+    return parseFloat(number1) + parseFloat(number2);
 }
 
 function subtraction(number1, number2) {
