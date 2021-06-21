@@ -20,6 +20,8 @@ numberButtons.forEach(element => { element.addEventListener("click", () => {
 
     }
 
+    makeTextSmall ()
+
 })
     
 });
@@ -71,6 +73,9 @@ equals.addEventListener("click", ()=>{
 
     number1 = enterCalc.textContent;
     }
+
+    makeTextSmall ()
+
 });
 
 clear.addEventListener("click", () => { 
@@ -82,13 +87,16 @@ clear.addEventListener("click", () => {
 
 del.addEventListener("click", () => {
     
-        enterCalc.textContent.replace(1, "")
+       let newString = enterCalc.textContent.substring(0, enterCalc.textContent.length - 1);
+
+       enterCalc.textContent = newString
+
+       makeTextSmall ()
+
+
     
 })
 
-
-
-//  backpsace reshi
 
 
 function addition(number1, number2) {
@@ -118,6 +126,21 @@ function operate(number1, number2, operator) {
     } else {
         enterCalc.textContent = division(number1, number2);
     }
+
+}
+
+function makeTextSmall (){
+    if(enterCalc.textContent.length > 14) {
+        enterCalc.style.fontSize = "0.8rem";
+    } else if(enterCalc.textContent.length > 9) {
+        enterCalc.style.fontSize = "1rem"
+
+
+    }else if(enterCalc.textContent.length > 5) {
+        enterCalc.style.fontSize = "1.5rem"
+
+
+    } else {enterCalc.style.fontSize = "2rem"}
 
 }
 
