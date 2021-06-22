@@ -2,7 +2,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 8rem 40rem;
+  grid-template-rows: 20% 80%;
   background-image: url(background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,7 +55,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   font-family: "Press Start 2P", cursive;
-  font-size: 2rem;
+  font-size: 2vw;
   overflow: hidden;
   background-color: #1b663e;
 }
@@ -167,10 +167,22 @@ body {
   body {
     grid-template-columns: 0% 100% 0%;
   }
+  .entered-calculation {
+    font-size: 3vw;
+  }
 }
 
-@media (max-width: 401px) {
+@media (max-width: 421px) {
   .display-calculation {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 601px) {
+  .entered-calculation {
+    font-size: 3.4vw;
+  }
+  .sign {
+    font-size: 8vw;
   }
 }

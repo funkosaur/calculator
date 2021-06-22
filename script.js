@@ -20,8 +20,6 @@ numberButtons.forEach(element => { element.addEventListener("click", () => {
 
     }
 
-    makeTextSmall ()
-
 })
     
 });
@@ -74,7 +72,6 @@ equals.addEventListener("click", ()=>{
     number1 = enterCalc.textContent;
     }
 
-    makeTextSmall ()
 
 });
 
@@ -90,8 +87,6 @@ del.addEventListener("click", () => {
        let newString = enterCalc.textContent.substring(0, enterCalc.textContent.length - 1);
 
        enterCalc.textContent = newString
-
-       makeTextSmall ()
 
 
     
@@ -112,10 +107,22 @@ function multiply(number1, number2) {
 }
 
 function division(number1, number2) {
+    if(number1 == 0 || number2 == 0){
+        return "Oh nonono can't do that"
+    }
     return number1 / number2;
 }
 
+function percentage(number1, number2) {
+    return (number1 * 0.01)*number2;
+}
+
 function operate(number1, number2, operator) {
+    if(enterCalc.textContent == "Oh nonono can't do that" || displayCalc.textContent == "Oh nonono can't do that"){
+        enterCalc.textContent = "";
+        displayCalc.textContent = "";
+        console.log("ayy")
+    }
 
     if(operator === "+") {
        enterCalc.textContent = addition(number1, number2);
@@ -123,25 +130,29 @@ function operate(number1, number2, operator) {
         enterCalc.textContent = subtraction(number1, number2);
     } else if(operator === "*") {
         enterCalc.textContent = multiply(number1, number2);
-    } else {
+    } else if(operator ==="/"){
         enterCalc.textContent = division(number1, number2);
+    } else {
+        enterCalc.textContent = percentage(number1, number2);
     }
 
 }
-
+/*
 function makeTextSmall (){
     if(enterCalc.textContent.length > 14) {
         enterCalc.style.fontSize = "0.8rem";
     } else if(enterCalc.textContent.length > 9) {
-        enterCalc.style.fontSize = "1rem"
+        enterCalc.style.fontSize = "1vw"
 
 
     }else if(enterCalc.textContent.length > 5) {
-        enterCalc.style.fontSize = "1.5rem"
+        enterCalc.style.fontSize = "2vw"
 
 
-    } else {enterCalc.style.fontSize = "2rem"}
+    } else {enterCalc.style.fontSize = "3vw"}
 
 }
+*/
+
 
 
