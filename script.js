@@ -10,6 +10,8 @@ const clear = document.querySelector(".delete-all");
 
 numberButtons.forEach(element => { element.addEventListener("click", () => {
 
+    dividingByZero()
+
     if (enterCalc.textContent.length < 16) {
 
         enterCalc.textContent += element.value;
@@ -29,6 +31,8 @@ let operator
 let number2
 
 expressions.forEach(element => {element.addEventListener("click", () => { 
+    
+    dividingByZero()
 
     if(displayCalc.textContent.includes(number1) && enterCalc.textContent.length != 0){
         
@@ -83,6 +87,8 @@ clear.addEventListener("click", () => {
 })
 
 del.addEventListener("click", () => {
+
+    dividingByZero()
     
        let newString = enterCalc.textContent.substring(0, enterCalc.textContent.length - 1);
 
@@ -118,11 +124,7 @@ function percentage(number1, number2) {
 }
 
 function operate(number1, number2, operator) {
-    if(enterCalc.textContent == "Oh nonono can't do that" || displayCalc.textContent == "Oh nonono can't do that"){
-        enterCalc.textContent = "";
-        displayCalc.textContent = "";
-        console.log("ayy")
-    }
+    dividingByZero()
 
     if(operator === "+") {
        enterCalc.textContent = addition(number1, number2);
@@ -134,6 +136,15 @@ function operate(number1, number2, operator) {
         enterCalc.textContent = division(number1, number2);
     } else {
         enterCalc.textContent = percentage(number1, number2);
+    }
+
+}
+
+
+function dividingByZero(){
+    if(enterCalc.textContent == "Oh nonono can't do that" || displayCalc.textContent == "Oh nonono can't do that " + operator ){
+        enterCalc.textContent = "";
+        displayCalc.textContent = "";
     }
 
 }

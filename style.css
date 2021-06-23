@@ -55,7 +55,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   font-family: "Press Start 2P", cursive;
-  font-size: 2vw;
+  font-size: 1.7vw;
   overflow: hidden;
   background-color: #1b663e;
 }
@@ -168,7 +168,7 @@ body {
     grid-template-columns: 0% 100% 0%;
   }
   .entered-calculation {
-    font-size: 3vw;
+    font-size: 2.8vw;
   }
 }
 
@@ -180,9 +180,40 @@ body {
 
 @media (max-width: 601px) {
   .entered-calculation {
-    font-size: 3.4vw;
+    font-size: 2.8vw;
   }
   .sign {
     font-size: 8vw;
+  }
+}
+
+.neonText {
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #0a9cf5, 0 0 21px #0a9cf5,
+    0 0 42px #0a9cf5, 0 0 82px #0a9cf5, 0 0 92px #0a9cf5, 0 0 102px #0a9cf5,
+    0 0 151px #0a9cf5;
+}
+
+.neonText2 {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #ff124f, 0 0 21px #ff124f,
+    0 0 42px #ff124f, 0 0 82px #ff124f, 0 0 92px #ff124f, 0 0 102px #ff124f,
+    0 0 151px #ff124f;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0a9cf5,
+      0 0 80px #0a9cf5, 0 0 90px #0a9cf5, 0 0 100px #0a9cf5, 0 0 150px #0a9cf5;
+  }
+  20% {
+    text-shadow: none;
   }
 }
