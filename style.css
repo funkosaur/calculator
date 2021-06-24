@@ -55,7 +55,7 @@ body {
   justify-content: flex-end;
   align-items: center;
   font-family: "Press Start 2P", cursive;
-  font-size: 1.7vw;
+  font-size: 1.6vw;
   overflow: hidden;
   background-color: #1b663e;
 }
@@ -189,23 +189,20 @@ body {
     grid-template-columns: 0% 100% 0%;
   }
   .entered-calculation {
-    font-size: 2.8vw;
+    font-size: 2.5vw;
   }
 }
 
 @media (max-width: 421px) {
   .display-calculation {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
   .deleteit {
-    font-size: 1rem;
+    font-size: 0.5vw;
   }
 }
 
 @media (max-width: 601px) {
-  .entered-calculation {
-    font-size: 2.8vw;
-  }
   .sign {
     font-size: 8vw;
   }
