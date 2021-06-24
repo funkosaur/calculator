@@ -66,6 +66,12 @@ body {
   border: 0;
   background-color: rgb(43, 43, 43);
   color: white;
+  transition: 0.3s;
+}
+
+.number-button:hover {
+  background-color: #0a9cf5;
+  color: black;
 }
 
 .expression-button {
@@ -73,6 +79,11 @@ body {
   border-radius: 0;
   border: 0;
   background-color: #ff124f;
+  transition: 0.3s;
+}
+
+.expression-button:hover {
+  background-color: #0a9cf5;
 }
 
 .equals-button {
@@ -80,12 +91,22 @@ body {
   border-radius: 0;
   border: 0;
   background-color: #ff124f;
+  transition: 0.3s;
+}
+
+.equals-button:hover {
+  background-color: #0a9cf5;
 }
 
 .deleteit {
   font-size: 2rem;
   border-radius: 0;
   border: 0;
+  transition: 0.3s;
+}
+
+.deleteit:hover {
+  background-color: #0a9cf5;
 }
 
 .title {
@@ -176,6 +197,9 @@ body {
   .display-calculation {
     font-size: 0.8rem;
   }
+  .deleteit {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 601px) {
@@ -185,17 +209,23 @@ body {
   .sign {
     font-size: 8vw;
   }
+  .deleteit {
+    font-size: 1.5rem;
+  }
 }
 
-.neonText {
-  animation: flicker 1.5s infinite alternate;
+.neonText3 {
+  animation: flicker 3s alternate;
+  animation-iteration-count: 2;
   color: #fff;
   text-shadow: 0 0 7px #fff, 0 0 10px #0a9cf5, 0 0 21px #0a9cf5,
-    0 0 42px #0a9cf5, 0 0 82px #0a9cf5, 0 0 92px #0a9cf5, 0 0 102px #0a9cf5,
-    0 0 151px #0a9cf5;
+    0 0 42px #0a9cf5, 0 0 82px #0a9cf5, 0 0 92px #0a9cf5;
 }
 
 .neonText2 {
+  animation: flicker1 3s alternate;
+  animation-iteration-count: 2;
+
   color: #fff;
   text-shadow: 0 0 7px #fff, 0 0 10px #ff124f, 0 0 21px #ff124f,
     0 0 42px #ff124f, 0 0 82px #ff124f, 0 0 92px #ff124f, 0 0 102px #ff124f,
@@ -203,17 +233,58 @@ body {
 }
 
 @keyframes flicker {
+  20%,
+  40%,
+  70%,
+  95% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #0a9cf5, 0 0 19px #0a9cf5,
+      0 0 40px #0a9cf5, 0 0 80px #0a9cf5, 0 0 90px #0a9cf5, 0 0 100px #0a9cf5,
+      0 0 150px #0a9cf5;
+  }
   0%,
   18%,
   22%,
   25%,
   53%,
-  57%,
-  100% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0a9cf5,
-      0 0 80px #0a9cf5, 0 0 90px #0a9cf5, 0 0 100px #0a9cf5, 0 0 150px #0a9cf5;
-  }
-  20% {
+  57% {
     text-shadow: none;
+  }
+}
+
+@keyframes flicker1 {
+  20%,
+  40%,
+  70%,
+  95% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #ff124f, 0 0 19px #ff124f,
+      0 0 40px #ff124f, 0 0 80px #ff124f, 0 0 90px #ff124f, 0 0 100px #ff124f,
+      0 0 150px #ff124f;
+  }
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57% {
+    text-shadow: none;
+  }
+}
+
+@keyframes flicke2 {
+  20%,
+  40%,
+  70%,
+  95% {
+    background-color: 0 0 4px #fff, 0 0 11px #0a9cf5, 0 0 19px #0a9cf5,
+      0 0 40px #0a9cf5, 0 0 80px #0a9cf5, 0 0 90px #0a9cf5, 0 0 100px #0a9cf5,
+      0 0 150px #0a9cf5;
+  }
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57% {
+    background-color: none;
   }
 }

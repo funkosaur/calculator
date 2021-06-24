@@ -16,9 +16,7 @@ numberButtons.forEach(element => { element.addEventListener("click", () => {
 
         enterCalc.textContent += element.value;
 
-        if(enterCalc.textContent.includes(".")) {
-                decimal.value = "";
-        } else {decimal.value = "."}
+        noRepeatingDecimals()
 
     }
 
@@ -74,6 +72,8 @@ equals.addEventListener("click", ()=>{
     operate(number1, number2, operator)
 
     number1 = enterCalc.textContent;
+
+    noRepeatingDecimals()
     }
 
 
@@ -147,6 +147,12 @@ function dividingByZero(){
         displayCalc.textContent = "";
     }
 
+}
+
+function noRepeatingDecimals() {
+    if(enterCalc.textContent.includes(".")) {
+        decimal.value = "";
+} else {decimal.value = "."}
 }
 /*
 function makeTextSmall (){

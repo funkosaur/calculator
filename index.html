@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="icon" href="data:;base64,=" />
@@ -16,7 +20,11 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="sign"><span class="title neonText2">Cyber</span></span><span class="title neonText">Calculator</span></span></div>
+    <div class="sign">
+      <div class="title neonText3">
+        <span class="neonText2">Cyber </span>Calculator
+      </div>
+    </div>
     <div class="calculator-frame">
       <div class="calculator">
         <div class="display-calculation"><h2 class="display-calc"></h2></div>
@@ -38,11 +46,10 @@
         <button class="expression-button" id="add" value="+">+</button>
         <button class="expression-button" id="subtract" value="-">-</button>
         <button class="equals-button" id="equals" value="=">=</button>
-        <button class="delete-one deleteit" id="delete" value="bckSpc">Del
+        <button class="delete-one deleteit" id="delete" value="bckSpc">
+          <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         </button>
-        <button class="delete-all deleteit" id="clear" value="Clear">
-          C
-        </button>
+        <button class="delete-all deleteit" id="clear" value="Clear">C</button>
       </div>
     </div>
     <script src="script.js"></script>
