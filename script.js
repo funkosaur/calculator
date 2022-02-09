@@ -154,22 +154,6 @@ function noRepeatingDecimals() {
         decimal.value = "";
 } else {decimal.value = "."}
 }
-/*
-function makeTextSmall (){
-    if(enterCalc.textContent.length > 14) {
-        enterCalc.style.fontSize = "0.8rem";
-    } else if(enterCalc.textContent.length > 9) {
-        enterCalc.style.fontSize = "1vw"
-
-
-    }else if(enterCalc.textContent.length > 5) {
-        enterCalc.style.fontSize = "2vw"
-
-
-    } else {enterCalc.style.fontSize = "3vw"}
-
-}
-*/
 
 
 
